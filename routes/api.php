@@ -42,7 +42,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::resource('kategori', KategoriController::class);
     Route::resource('genre', GenreController::class);
     Route::resource('actor', ActorController::class);
-    Route::resource('actor', FilmController::class);
+    Route::resource('film', FilmController::class);
 
 });
 

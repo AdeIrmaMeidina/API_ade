@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Film;
@@ -112,6 +112,8 @@ class FilmController extends Controller
             if ($request->hasFile('foto')) {
                 //  Delete old photo
                 Storage::delete($film->foto);
+
+                $film->delete();
 
                 $path = $request->file('foto')->store('public/foto');
                 $film->foto = $path;
